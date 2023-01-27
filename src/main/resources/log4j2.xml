@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+	<Properties>
+        <Property name="INFO_LOG_PATTERN">
+            %m%n
+        </Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console-Appender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>${INFO_LOG_PATTERN}</pattern>
+			</PatternLayout>
+		</Console>
+	</Appenders>
+
+    <Loggers>
+        <root level="ERROR">
+            <appender-ref ref="Console-Appender"/>     
+		</root>
+		<Logger name="com.unlimint.task.writer" level="info" additivity="false">
+            <appender-ref ref="Console-Appender"/>     
+		</Logger>
+    </Loggers>
+</Configuration>
